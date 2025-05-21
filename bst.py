@@ -302,9 +302,12 @@ class BST:
         farthest to the left which would be the smallest value.
         """
         current = self._root
-        while current.left is not None:
-            current = current.left
-        return current.value
+        if current is None:
+            return None
+        else:
+            while current.left is not None:
+                current = current.left
+            return current.value
 
     def find_max(self) -> object:
         """
@@ -312,9 +315,12 @@ class BST:
         farthest to the right which would be the largest value.
         """
         current = self._root
-        while current.right is not None:
-            current = current.right
-        return current.value
+        if current is None:
+            return None
+        else:
+            while current.right is not None:
+                current = current.right
+            return current.value
 
     def is_empty(self) -> bool:
         """
